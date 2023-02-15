@@ -1,0 +1,20 @@
+td, th {
+    border: 1px solid #777;
+    padding: 0.5rem;
+    text-align: center;
+    
+}
+ 
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.3rem;
+}
+ 
+tbody tr:nth-child(odd) {
+    background: #eee;
+}
+caption {
+    font-size: 0.8rem;
+}
