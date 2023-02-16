@@ -1,10 +1,12 @@
+import { Button } from '@material-ui/core';
 import React, { useState } from 'react';
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
+import './Defaulters.css';
 
-function Defaulters() {
+function Defaulters(props) {
     const [crop, setCrop] = useState({ aspect: 1 });
-    const [imageSrc, setImageSrc] = useState(null);
+    const [imageSrc, setImageSrc] = useState(props.url);
     const [croppedImageUrl, setCroppedImageUrl] = useState(null);
 
 
@@ -17,7 +19,7 @@ function Defaulters() {
       };
       
       const handleCropComplete = croppedArea => {
-        // console.log("inside ha")
+        console.log("inside ha")
         if (croppedArea && imageSrc) {
           const canvas = document.createElement('canvas');
           const img = new Image();
@@ -37,32 +39,38 @@ function Defaulters() {
               croppedArea.width,
               croppedArea.height
             );
-            const url = canvas.toDataURL('image/jpeg');
-            setCroppedImageUrl(url);
+            const url2 = canvas.toDataURL('image/jpg');
+            console.log(url2)
+            setCroppedImageUrl(url2);
           };
         }
       };
 
 
   return (
-    <div>
-    <input className="settings-file-upload" type="file"  accept="image/*" onChange={handleImageChange} />
+    <div className='defaulter_box'>
+    <input className="settings-file-upload" type="file"  accept="image/*" onChange={handleImageChange} /> 
     {imageSrc && (
-      <ReactCrop
+      <ReactCrop 
         src={imageSrc}
         crop={crop}
         onChange={newCrop => setCrop(newCrop)}
         onComplete={handleCropComplete}
       >
-        <img
+        <img className='d_image'
        src={imageSrc}
     />
+       
         </ReactCrop>
     )}
     <br></br>
-    {croppedImageUrl && (
-      <img alt="Crop" style={{ maxWidth: '100%' }} src={croppedImageUrl} />
-    )}
+    <div className='dfuntion'>
+    
+      <img className='c_image' alt="Crop" style={{ maxWidth: '100%' }} src={croppedImageUrl} />
+    
+    <Button class="mui-btn mui-btn--small mui-btn--primary mui-btn--raised"> Send Warning </Button>
+    </div>
+    
   </div>
   )
 }

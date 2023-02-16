@@ -8,6 +8,7 @@ import { useStateValue } from "./StateProvider";
 import {BrowserRouter , Router , Route , Routes} from "react-router-dom";
 import Header from './Header';
 import VideoInput from './VideoInput';
+import D2 from './D2';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/" element={<Body/>} />
                 <Route path="/Login" element={<Login />} />
                 <Route path='/d' element={<Defaulters />}/>
+                <Route path='/d1' element={<D2 />}/>
                 <Route path='csv' element={<OpenCsv />}/>
                 <Route path='/c' element={<VideoInput/> }/>
             </Routes>

@@ -2,6 +2,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -25,3 +26,4 @@ const provider = new firebase.auth.GoogleAuthProvider();
   
 export { auth, provider };
 export default db;
+export const storage = getStorage(firebaseApp);

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import ReactPlayer from "react-player";
 import './Video.css';
 import { CsvToHtmlTable } from 'react-csv-to-table';
-function Video() {
+function Video(props) {
     const [isVideoLoaded, setIsVideoLoaded] = useState(false); 
     const onLoadedData = () => {
       setIsVideoLoaded(true);
@@ -15,7 +15,7 @@ function Video() {
         <Container className='videoPlayer'>
         <div>
           <ReactPlayer
-            url={Vid}
+            url={props.url}
             playing={true}
             controls={true}
             loop={true}

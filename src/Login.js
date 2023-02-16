@@ -29,7 +29,7 @@ function Login() {
     <div className='login'>
         <div className='login__container'>
             <img src="/images/logo1.png" alt=""></img>
-            <h1> AI DOCTOR</h1>
+            <h1> Speed App </h1>
             <Button onClick={signIn}>Sign in with Google</Button>
             <br></br>
             <Button onClick={signInDemo}>Demo User</Button> 
