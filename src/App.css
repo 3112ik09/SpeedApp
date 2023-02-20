@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+element.style {
+  padding-top: 0px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -3,12 +3,52 @@ import React, { useState } from 'react';
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 import './Defaulters.css';
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  listAll,
+  list,
+} from "firebase/storage";
+import { storage } from "./Firebase";
+
 
 function Defaulters(props) {
     const [crop, setCrop] = useState({ aspect: 1 });
     const [imageSrc, setImageSrc] = useState(props.url);
     const [croppedImageUrl, setCroppedImageUrl] = useState(null);
+    const [message, setMessage] = useState("");
 
+    let handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        let res = await fetch("/Form", {
+          method: "POST",
+          body: JSON.stringify({
+            Image:imageSrc,
+          }),
+        });
+        let resJson = await res.json();
+        if (res.status === 200) {
+          setMessage("User created successfully");
+        } else {
+          setMessage("Some error occured");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+
+    function handleFileSelect(e) {
+      const file = e.target.files[0];
+      const storageRef = storage.ref();
+      const fileRef = storageRef.child(file.name);
+  
+      fileRef.put(file).then((snapshot) => {
+        console.log('Uploaded file', snapshot);
+      });
+    }
 
     const handleImageChange = e => {
         const file = e.target.files[0];
@@ -49,7 +89,10 @@ function Defaulters(props) {
 
   return (
     <div className='defaulter_box'>
-    <input className="settings-file-upload" type="file"  accept="image/*" onChange={handleImageChange} /> 
+    {/* <input className="settings-file-upload" type="file"  accept="image/*" onChange={handleImageChange} />  */}
+    {/* <div>
+      <input type="file" onChange={handleFileSelect} />
+    </div> */}
     {imageSrc && (
       <ReactCrop 
         src={imageSrc}
@@ -64,11 +107,11 @@ function Defaulters(props) {
         </ReactCrop>
     )}
     <br></br>
-    <div className='dfuntion'>
-    
-      <img className='c_image' alt="Crop" style={{ maxWidth: '100%' }} src={croppedImageUrl} />
-    
-    <Button class="mui-btn mui-btn--small mui-btn--primary mui-btn--raised"> Send Warning </Button>
+    <div className="App">
+      <form onSubmit={handleSubmit}>
+        <button type="submit">Create</button>
+        <div className="message">{message ? <p>{message}</p> : null}</div>
+      </form>
     </div>
     
   </div>

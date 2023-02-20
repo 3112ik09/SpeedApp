@@ -1,9 +1,10 @@
 .header
 {
+    padding-top: 0cm;
     height:80px;
     display:flex;
     align-items: center;
-    background-color: #f5e0ff;
+    background-color: #d9cedf;
     position: sticky;
     top :0;
     z-index: 100;
@@ -49,7 +50,7 @@
 .header__searchLogo{
     padding:5px;
     height :20px;
-    background-color: lavender;
+    background-color: rgb(250, 191, 184);
 }
 .header__nav{
     display: flex;

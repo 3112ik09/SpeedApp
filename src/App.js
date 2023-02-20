@@ -24,9 +24,9 @@ function App() {
             <Routes>
                 <Route path="/" element={<Body/>} />
                 <Route path="/Login" element={<Login />} />
-                <Route path='/d' element={<Defaulters />}/>
-                <Route path='/d1' element={<D2 />}/>
-                <Route path='csv' element={<OpenCsv />}/>
+                <Route path='/d1' element={<Defaulters />}/>
+                <Route path='/d' element={<D2 />}/>
+                <Route path='/csv' element={<OpenCsv />}/>
                 <Route path='/c' element={<VideoInput/> }/>
             </Routes>
             </div>

@@ -13,6 +13,7 @@ import {
 } from "firebase/storage";
 import { storage } from "./Firebase";
 import { v4 } from "uuid";
+import BodyItems from './BodyItems';
 function Body() {
   const [imageUpload, setImageUpload] = useState(null);
   const [videoUrls, setVideoUrls] = useState([]);
@@ -21,13 +22,14 @@ function Body() {
   const videoListRef = ref(storage, "video/");
   const uploadFile = () => {
     if (imageUpload == null) return;
-    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+    const imageRef = ref(storage, `images/${imageUpload.name}`);
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         setImageUrls((prev) => [...prev, url]);
       });
     });
   };
+  
 
   useEffect(() => {
     listAll(videoListRef).then((response) => {
@@ -41,19 +43,7 @@ function Body() {
   return (
     <div className='Body'>
         {videoUrls.map((url , index) => {
-          return <div>
-            <h1> react player </h1>
-            <Video url={url}/>
-            <div className='body-pannel'>
-              <Link to='/d'>
-                  <button>Apply Algo</button>
-              </Link>  
-              <div>
-                  <Button> Import CSV</Button>
-              </div>
-            </div>
-
-            </div>
+          return <BodyItems url={url}/>
         }
         )}
     </div>

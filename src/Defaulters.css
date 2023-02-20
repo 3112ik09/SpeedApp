@@ -10,3 +10,13 @@
     margin: 0 -5px;
 
 }
+.d_image{
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    max-height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
