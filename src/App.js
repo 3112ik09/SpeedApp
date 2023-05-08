@@ -26,7 +26,7 @@ function App() {
                 <Route path="/Login" element={<Login />} />
                 <Route path='/d1' element={<Defaulters />}/>
                 <Route path='/d' element={<D2 />}/>
-                <Route path='/csv' element={<OpenCsv />}/>
+                <Route path='/csv/:fileName' element={<OpenCsv />}/>
                 <Route path='/c' element={<VideoInput/> }/>
             </Routes>
             </div>
