@@ -20,3 +20,34 @@
     margin-right: auto;
     width: 50%;
 }
+.container {
+    display: flex;
+  }
+  
+  .image-container {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .text-container {
+    margin-top: 10px;
+    margin-left: 100px;
+    flex: 2;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  p {
+    margin-bottom: 0;
+  }
+  .text-container p {
+    text-align: left;
+  }
+  

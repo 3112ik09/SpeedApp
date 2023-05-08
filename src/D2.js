@@ -85,19 +85,7 @@ function D2() {
       {imageUrls.map((url ,index) => {
         return <div key={index}>
                      <br></br> 
-                     {/* <img className="displayimage" height={200} src={url} /> */}
-                     {/* <ReactCrop
-                            src={url}
-                            crop={crop}
-                            key={index}
-                            onChange={newCrop => setCrop(newCrop)}
-                            onComplete={handleCropComplete}
-                        >
-                            <img
-                        src={url}
-                        />
-                            </ReactCrop> */}
-                        <Defaulters url={url} key={index} />
+                    <Defaulters url={url} key={index} />
                 </div>;
       })}
     </div>

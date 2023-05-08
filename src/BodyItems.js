@@ -11,6 +11,7 @@ function BodyItems(props) {
           method: 'POST',
           body: JSON.stringify({
              "url":props.url,
+             "name":props.name, 
           }),
           headers: {
              'Content-type': 'application/json; charset=UTF-8',
