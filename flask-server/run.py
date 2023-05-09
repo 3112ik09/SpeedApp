@@ -64,14 +64,14 @@ def numberPlate(url):
 
 def get_vehicle_info(plate_number):
 
-    # r = requests.get(
-    #     "http://www.regcheck.org.uk/api/reg.asmx/CheckIndia?RegistrationNumber={0}&username={1}".format(str(plate_number) , userName))
-    # data = xmltodict.parse(r.content)
-    # jdata = json.dumps(data)
-    # df = json.loads(jdata)
+    r = requests.get(
+        "http://www.regcheck.org.uk/api/reg.asmx/CheckIndia?RegistrationNumber={0}&username={1}".format(str(plate_number) , userName))
+    data = xmltodict.parse(r.content)
+    jdata = json.dumps(data)
+    df = json.loads(jdata)
 
-    vehicle_data = { "Description": "HYUNDAI MOTOR INDIA LTD / CRETA 1.6 VTVT E", "RegistrationYear": "2018", "CarMake": { "CurrentTextValue": "HYUNDAI MOTOR INDIA LTD" }, "CarModel": { "CurrentTextValue": "CRETA 1.6 VTVT E" }, "MakeDescription": { "CurrentTextValue": "HYUNDAI MOTOR INDIA LTD" }, "ModelDescription": { "CurrentTextValue": "CRETA 1.6 VTVT E" }, "VechileIdentificationNumber": "MALC181CLJM30000", "EngineNumber": "G4FGHW6XXXXX", "FuelType": { "CurrentTextValue": "PETROL" }, "RegistrationDate": "28/01/2018", "Owner": "HANNAH ISAAC", "Fitness": "27-Jan-2033", "Insurance": "27-Jan-2019", "Location": "DY.DIR.ZONAL OFFICE,EAST DELHI,MAYUR VIHAR", "ImageUrl": "http://in.carregistrationapi.com/image.aspx/@SFlVTkRBSSBNT1RPUiBJTkRJQSBMVEQgLyBDUkVUQSAxLjYgVlRWVCBF" }
-    return jsonify(vehicle_data)
+    # vehicle_data = { "Description": "HYUNDAI MOTOR INDIA LTD / CRETA 1.6 VTVT E", "RegistrationYear": "2018", "CarMake": { "CurrentTextValue": "HYUNDAI MOTOR INDIA LTD" }, "CarModel": { "CurrentTextValue": "CRETA 1.6 VTVT E" }, "MakeDescription": { "CurrentTextValue": "HYUNDAI MOTOR INDIA LTD" }, "ModelDescription": { "CurrentTextValue": "CRETA 1.6 VTVT E" }, "VechileIdentificationNumber": "MALC181CLJM30000", "EngineNumber": "G4FGHW6XXXXX", "FuelType": { "CurrentTextValue": "PETROL" }, "RegistrationDate": "28/01/2018", "Owner": "HANNAH ISAAC", "Fitness": "27-Jan-2033", "Insurance": "27-Jan-2019", "Location": "DY.DIR.ZONAL OFFICE,EAST DELHI,MAYUR VIHAR", "ImageUrl": "http://in.carregistrationapi.com/image.aspx/@SFlVTkRBSSBNT1RPUiBJTkRJQSBMVEQgLyBDUkVUQSAxLjYgVlRWVCBF" }
+    return jsonify(df)
     # return jsonify(df)
 
 
