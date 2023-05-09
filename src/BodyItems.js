@@ -27,7 +27,9 @@ function BodyItems(props) {
     <div>
       <Video url={props.url} />
       <div className='body_pannel'>
-        <button onClick={handleClick}>Apply Algo</button>
+      <Link to='http://127.0.0.1:5000/'>
+                  <button onClick={handleClick} >Apply Algo</button>
+        </Link>
         <div>
           <Link to={`/csv/${props.name}`}>
             <button>Import CSV</button></Link>

@@ -74,6 +74,7 @@ function Body() {
 
   return (
     <div className='Body'>
+        <h1 style="font-family: Open Sans; font-size: 32px; font-weight: bold; color: #333; margin-bottom: 20px;" >Analyzing Video for Accurate Speed Detection</h1>
         {videoUrls.map((video , index) => {
           return <BodyItems url={video.url} name={video.name}/>
         }

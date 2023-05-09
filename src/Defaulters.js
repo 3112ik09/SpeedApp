@@ -46,7 +46,7 @@ function Defaulters(props) {
                   <button onClick={handleClick}> Search Details </button>
               </div>
               <div className="text-container">
-                <h1> Vechile Details </h1>
+                <h1> Vehicle Details </h1>
                   {vehicleData && (
                       <>
                           <div>
@@ -61,6 +61,7 @@ function Defaulters(props) {
                       </>
                   )}
               </div>
+              <hr></hr>
           </div>
       </div>
   )
