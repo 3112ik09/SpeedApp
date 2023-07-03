@@ -3,7 +3,7 @@
 - Backend : Flask
 - DataBase/ Auth : Firebase
 ![Alt Text](https://github.com/3112ik09/SpeedApp/blob/master/1.png)
-![Alt Text](https://github.com/3112ik09/SpeedApp/blob/master/2.png)
+![Alt Text](https://github.com/3112ik09/SpeedApp/blob/master/3.png)
 ![Alt Text](https://github.com/3112ik09/SpeedApp/blob/master/Screenshot%20from%202023-05-08%2021-50-39.png)
 ## VEHICLE SPEED : Yolov8 
 The YOLOv8 model, created by Ultralytics, is an improved version of the YOLO (You Only Look Once) object recognition and picture segmentation model.
