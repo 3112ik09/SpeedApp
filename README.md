@@ -1,7 +1,7 @@
 # Speeding Vehicle Detection 
-FrontEnd :React
-Backend : Flask
-DataBase/ Auth : Firebase
+- FrontEnd :React
+- Backend : Flask
+- DataBase/ Auth : Firebase
 ![Alt Text](https://github.com/3112ik09/SpeedApp/blob/master/1.png)
 ![Alt Text](https://github.com/3112ik09/SpeedApp/blob/master/2.png)
 ![Alt Text](https://github.com/3112ik09/SpeedApp/blob/master/Screenshot%20from%202023-05-08%2021-50-39.png)
@@ -13,5 +13,5 @@ License plate recognition (LPR), also known as automatic number plate recognitio
 ## OCR
 Pytesseract is a Python wrapper for Google's Tesseract OCR (Optical Character Recognition) engine. It provides a convenient way to extract text from images or scanned documents using Tesseract.
 
-To see a demonstration of the project in action, watch this video: [YouTube Video](https://www.youtube.com/watch?v=qqOpcMs3hFE)
+### To see a demonstration of the project in action, watch this video: [YouTube Video](https://www.youtube.com/watch?v=qqOpcMs3hFE)
 
